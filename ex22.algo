@@ -1,0 +1,26 @@
+algorithme positif
+variables
+M,N,divm,divn: entier
+début
+    répéter
+        écrire("Donner deux valeurs positifs ")
+        lire(M,N) 
+    jusqu'à (M > 0) et (N > 0)
+    divm ← 1
+    divn ← 1
+    tant que (divm < M) faire
+    si (M % divm = 0) faire    
+        divm ← divm + 1
+    fin_si
+    fin_tant_que
+    tant que (divn < N) faire
+        si (N % divn = 0) faire
+        divn ← divn + 1
+        fin_si
+    fin_tant_que
+    si (divn = M) et (divm = N) alors
+        écrire("",M,"et",N,"sont amis")
+    sinon 
+    écrire("",M,"et",N,"ne sont pas amis")
+    fin_si
+fin
