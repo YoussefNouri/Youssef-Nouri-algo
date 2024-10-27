@@ -1,0 +1,37 @@
+algorithme Robot
+Constantes
+N : entier = 20
+Types
+Tab : tableau [1..N] de caractère
+variables
+T_Parcours : Tab
+aide : caractère
+début
+    répéter
+        écrire("Donner la taille du tableau : ")
+        lire(N)
+    jusqu'à N > 1 et N <= 20
+    répéter
+        pour i de 1 à N faire
+            écrire("case ",i,": ")
+            lire(T_Parcours[i])
+            si  T_Parcours[i] = "G" alors
+                écrire("N à E, N à O, O à S, S à E")
+            sinon si T_Parcours[i] = "D" alors
+                écrire("E à S, S à O, O à N, N à E")
+            sinon si T_Parcours[i] = "T" alors
+                écrire("E à O, O à E , S à N, N à S") 
+            fin_si
+            fin_si
+            fin_si
+            tant que (T_Parcours[i] = "G" et T_Parcours = "D") ou (T_Parcours[i] = "D" et T_Parcours = "G") ou (T_Parcours[i] = "T" et T_Parcours = "T")  faire
+                aide  = T_Parcours[i]
+                T_Parcours[i] = T_Parcours[i + 1]
+                T_Parcours[i + 1] = aide
+            fin_tant_que
+        fin_pour
+    jusqu'à T_Parcours[i] = "M" ou T_Parcours[i] = "G" ou T_Parcours[i] = "D" ou T_Parcours[i] = "T"
+    pour i de 1 à N faire
+        écrire("Parcours après simplification : ",T_Parcours[i]) 
+    fin_pour
+fin

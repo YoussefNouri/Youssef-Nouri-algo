@@ -1,0 +1,30 @@
+algorithme trier
+Constantes
+Max : entier = 100
+Types
+Tab : tableau [1..Max] de entier
+variables
+Tinit,Trang,Ttrie : Tab
+n,aide : entier
+début
+    répéter
+        écrire("Donner la taille du tableau : ")
+        lire(n)
+    jusqu'à (n > 1) et (n ≤ Max)
+    répéter
+        pour i de 1 à n faire
+            écrire("Case ",i,": ")
+            lire(Tinit[i]) 
+            i ← Trang[i]
+            écrire(Trang[i]) 
+            si Tinit[i] > Tinit[i + 1] alors
+                aide ← Tinit[i]
+                Tinit[i] ← Tinit[i + 1]
+                Tinit[i + 1] ← aide
+            fin_si 
+        fin_pour
+    jusqu'à i ≥ 1 et i ≤ 100
+    pour i de 1 à n faire
+        écrire(Ttrie[i]) 
+    fin_pour
+fin

@@ -1,0 +1,25 @@
+algorithme DivisiblePar9
+variables
+x,resultat,i : entier
+début
+    répéter
+        écrire("Donner un entier : ")
+        lire(x)
+    jusqu'à  x > 10
+    res ← 1
+    i ← 1
+    si x mod 9 = 0 alors
+        tant que res < 9 faire
+            resultat ← resultat + x mod 9
+            x ← x / 9
+            i ← i + 1
+            si resultat > 9 alors
+                resultat ← resultat - 9
+            sinon si resultat = 9 alors
+                res ← 0
+            fin_si
+            fin_si 
+        fin_tant_que
+        écrire(x,"est divisble par 9") 
+    fin_si
+fin

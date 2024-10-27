@@ -1,0 +1,22 @@
+Algorithme DS
+Variable
+ x, a, p : Réel
+ n, i : Entier
+début
+ écrire (" Donner une valeur ")
+ lire (x)
+ répéter
+ écrire(" Donner un entier positif ")
+ lire (n)
+ jusqu'à (n >= 0)
+ P ← 0
+ a ← 10
+ i ← n
+répéter
+    écrire("Donner une valeur : ")
+    lire(a)
+    i ← i - 1
+    P ← P * x * a
+jusqu'à (i <= 0) et (a < 0)
+écrire("Le résultat est :",P/n) 
+fin
