@@ -1,37 +1,26 @@
-algorithme Robot
-Constantes
-N : entier = 20
-Types
-Tab : tableau [1..N] de caractère
+algorithme positif
 variables
-T_Parcours : Tab
-aide : caractère
+M,N,divm,divn: entier
 début
     répéter
-        écrire("Donner la taille du tableau : ")
-        lire(N)
-    jusqu'à N > 1 et N <= 20
-    répéter
-        pour i de 1 à N faire
-            écrire("case ",i,": ")
-            lire(T_Parcours[i])
-            si  T_Parcours[i] = "G" alors
-                écrire("N à E, N à O, O à S, S à E")
-            sinon si T_Parcours[i] = "D" alors
-                écrire("E à S, S à O, O à N, N à E")
-            sinon si T_Parcours[i] = "T" alors
-                écrire("E à O, O à E , S à N, N à S") 
-            fin_si
-            fin_si
-            fin_si
-            tant que (T_Parcours[i] = "G" et T_Parcours = "D") ou (T_Parcours[i] = "D" et T_Parcours = "G") ou (T_Parcours[i] = "T" et T_Parcours = "T")  faire
-                aide  = T_Parcours[i]
-                T_Parcours[i] = T_Parcours[i + 1]
-                T_Parcours[i + 1] = aide
-            fin_tant_que
-        fin_pour
-    jusqu'à T_Parcours[i] = "M" ou T_Parcours[i] = "G" ou T_Parcours[i] = "D" ou T_Parcours[i] = "T"
-    pour i de 1 à N faire
-        écrire("Parcours après simplification : ",T_Parcours[i]) 
-    fin_pour
+        écrire("Donner deux valeurs positifs ")
+        lire(M,N) 
+    jusqu'à (M > 0) et (N > 0)
+    divm ← 1
+    divn ← 1
+    tant que (divm < M) faire
+    si (M % divm = 0) faire    
+        divm ← divm + 1
+    fin_si
+    fin_tant_que
+    tant que (divn < N) faire
+        si (N % divn = 0) faire
+        divn ← divn + 1
+        fin_si
+    fin_tant_que
+    si (divn = M) et (divm = N) alors
+        écrire("",M,"et",N,"sont amis")
+    sinon 
+    écrire("",M,"et",N,"ne sont pas amis")
+    fin_si
 fin
